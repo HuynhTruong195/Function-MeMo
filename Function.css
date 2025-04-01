@@ -1,0 +1,262 @@
+
+  🚀 Giới thiệu về Hàm (Function) trong JavaScript 
+  🔹 Hàm là gì?
+Hàm (function) là một khối mã được định nghĩa để thực hiện một nhiệm vụ cụ thể.
+💡 Bạn có thể viết một hàm một lần và dùng lại nhiều lần!
+1. Cách tạo hàm trong JavaScript
+📌 Cách 1: Hàm cơ bản (Function Declaration)
+function sayHello() {
+  console.log("Xin chào!");
+}
+
+sayHello(); // Gọi hàm → Kết quả: Xin chào!
+🔹 Giải thích:
+
+function sayHello() {}: Tạo một hàm có tên sayHello.
+
+console.log("Xin chào!");: Khi gọi hàm, nó sẽ in "Xin chào!" lên màn hình.
+
+sayHello();: Gọi hàm để thực thi.
+
+📌 Cách 2: Hàm có tham số (Function with Parameters)
+
+function greet(name) {
+  console.log("Xin chào, " + name + "!");
+}
+
+greet("Nam");  // Kết quả: Xin chào, Nam!
+greet("Lan");  // Kết quả: Xin chào, Lan!
+🔹 Giải thích:
+
+name là tham số → Khi gọi hàm, bạn truyền vào giá trị "Nam" hoặc "Lan".
+
+[[][]NOTE:
+name là THAM SỐ ĐẠI DIỆN  sinh ra khi khai báo hàm. nằm trong dấu ()
+(ngầm hiểu đang có 1 biến name đc khởi tạo làm tham số đại diện)
+
+"Nam" là ĐỐI SỐ THỰC TẾ được truyền vào để thực thi hàm
+
+
+📌 Cách 3: Hàm có giá trị trả về (return)
+function add(a, b) {
+  return a + b;
+}
+
+let result = add(5, 3);
+console.log(result); // Kết quả: 8
+🔹 Giải thích:
+
+return a + b; → Trả về kết quả của phép cộng.
+
+let result = add(5, 3); → Lưu kết quả trả về vào biến result.
+
+📌 Cách 4: Hàm mũi tên (Arrow Function) - Cách viết gọn hơn
+const multiply = (a, b) => a * b;
+
+console.log(multiply(4, 2)); // Kết quả: 8
+
+🔥 Tóm lại
+Cách dùng	          Cú pháp           	                  Đặc điểm
+Hàm cơ bản	      function sayHello() {}	                Dùng khi cần đặt tên cho hàm
+Hàm có tham số	  function greet(name) {}        	Nhận dữ liệu từ bên ngoài
+Hàm có return	    function add(a, b){ return a + b;}	  rả về kết quả để sử dụng tiếp
+Hàm mũi tên	      const func = (a, b) => a + b;	          Viết gọn hơn, tiện dùng với callback
+
+
+
+
+
+🚀 Từ khóa return trong JavaScript
+[[[[MỖI KHI MUỐN TRẢ VỀ KẾT QUẢ NÀO ĐÓ MÀ KHÔNG THỰC HIỆN TÁC VỤ CỤ THỂ
+
+🔹1. return là gì?
+  return được dùng trong hàm để trả về một giá trị và kết thúc hàm ngay lập tức.
+
+📌 Ví dụ đơn giản:
+  function sum(a, b) {
+    return a + b; // Trả về kết quả của phép cộng
+  }
+  let result = sum(5, 3);
+  console.log(result); // Kết quả: 8
+
+🔹 Giải thích:
+  return a + b; → Trả về kết quả phép cộng (5 + 3 = 8).
+  result nhận giá trị từ return và in ra màn hình.
+
+🔹 2. return giúp lấy dữ liệu từ hàm
+  Nếu một hàm không có return, nó sẽ trả về undefined.
+
+📌 Ví dụ hàm KHÔNG có return:
+  function sayHello() {
+    console.log("Xin chào!");
+  }
+  let message = sayHello();
+  console.log(message); // Kết quả: undefined
+
+
+🔹 3. return kết thúc hàm ngay lập tức
+  Sau return, mọi dòng code phía dưới sẽ không chạy nữa.
+
+
+  🔹 4. Dùng return với điều kiện (if)
+  Bạn có thể dùng return để kết thúc hàm sớm nếu gặp điều kiện nào đó.
+
+📌 Ví dụ kiểm tra số chẵn/lẻ:
+
+function isEven(number) {
+  if (number % 2 === 0) {
+      return true; // Trả về true nếu số chẵn
+  }
+  return false; // Nếu không, trả về false
+}
+console.log(isEven(4)); // Kết quả: true
+console.log(isEven(7)); // Kết quả: false
+
+
+
+
+🚀 Biểu thức hàm (Function Expression) trong JavaScript là cách khai báo hàm bằng cách gán nó cho một biến.
+[GỌI ĐƠN GIẢN LÀ ĐẶT TÊN BIẾN CHO HÀM ĐỂ KHI GỌI TÊN BIẾN THÌ HÀM THỰC THI
+
+🔹 Cú pháp đơn giản:
+const sayHello = function() {
+  console.log("Hello!");
+};
+sayHello(); // Gọi hàm
+
+🔹 Giải thích dễ hiểu:
+function() { console.log("Hello!"); } là một hàm ẩn danh (không có tên).
+Gán hàm này cho biến sayHello.
+Khi cần dùng, chỉ cần gọi sayHello().
+
+👉 Khác với function declaration (hàm thông thường), function expression không thể gọi trước khi khai báo.
+
+Ví dụ:
+console.log(add(2, 3)); // ❌ Lỗi! Không thể gọi trước khi khai báo.
+const add = function(a, b) {
+    return a + b;
+};
+console.log(add(2, 3)); // ✅ Kết quả: 5
+
+
+IIFE (Immediately Invoked Function Expression) là một biểu thức hàm tự gọi ngay sau khi được định nghĩa.
+
+🔹 Cú pháp đơn giản:
+(function(name) {
+  console.log("Hello", name);
+})("Nam");  // "Hello Nam"
+
+
+
+
+[🔥! Higher Order Function (HOF) là gì?
+HOF là hàm nhận một hàm khác làm tham số hoặc trả về một hàm khác.
+
+💡 Ví dụ dễ hiểu nhất:
+function sayHello() {
+  return "Hello!";
+}
+  function greet(func) {
+    console.log(func()); 
+}
+// Truyền hàm sayHello vào greet
+greet(sayHello); // Output: "Hello!"
+
+👉 Ở đây, greet là Higher Order Function vì nó nhận một hàm khác (sayHello) làm tham số.
+
+
+🔹 Ứng dụng thực tế của HOF
+  ✅ Duyệt mảng với map (HOF phổ biến)
+  Dùng để tạo một mảng mới bằng cách áp dụng một hàm lên từng phần tử của mảng cũ.
+
+  let numbers = [1, 2, 3];
+  let doubled = numbers.map(num => num * 2);
+  console.log(doubled); // Output: [2, 4, 6]
+
+  ✅ Lọc mảng với filter
+  Trả về một mảng mới chỉ chứa các phần tử thỏa mãn điều kiện.
+
+  let nums = [1, 2, 3, 4];
+  let evens = nums.filter(n => n % 2 === 0);
+  console.log(evens); // Output: [2, 4]
+
+  ✅ Tính tổng với reduce
+  Giảm mảng thành một giá trị duy nhất.
+Có thể gọi là hàm tích lũy
+
+  let sum = numbers.reduce((acc, num) => acc + num, 0);
+  console.log(sum); // Output: 6
+
+
+  🚀 Phương thức forEach()
+  forEach() là một phương thức của mảng giúp lặp qua từng phần tử trong mảng và thực hiện một hành động nào đó.
+
+  📌 Cú pháp:
+      array.forEach(function(element, index, array) {
+        // Code thực thi với từng phần tử
+    });
+    element: Giá trị của từng phần tử trong mảng.
+
+    index (tuỳ chọn): Vị trí (chỉ số) của phần tử trong mảng.
+
+    array (tuỳ chọn): Chính mảng gốc đang được duyệt.
+
+    Ví dụ đơn giản
+    📌 Lặp qua mảng và in từng phần tử
+    let numbers = [1, 2, 3, 4];
+
+    numbers.forEach(function(num) {
+        console.log(num);
+    });
+    // kết quả:   
+              1
+              2
+              3
+              4
+            🚀 Giải thích:
+
+forEach() lấy từng phần tử (num) trong mảng numbers và in ra.
+
+
+    ✅  Dùng forEach() với index
+    📌 Ví dụ: Hiển thị cả giá trị và chỉ số
+      let fruits = ["Táo", "Cam", "Chuối"];
+
+  fruits.forEach(function(fruit, index) {
+      console.log(`Vị trí ${index}: ${fruit}`);
+  });
+      🔹 Kết quả:
+      Vị trí 0: Táo
+      Vị trí 1: Cam
+      Vị trí 2: Chuối
+
+      🚀 Giải thích:
+      index lấy số thứ tự của từng phần tử trong mảng.
+
+      ✅  DDùng forEach() với Arrow Function (=>)
+      📌 Cách viết gọn hơn với arrow function
+      let numbers = [2, 4, 6];
+    numbers.forEach(num => console.log(num * 2));
+    🔹 Kết quả:
+        4
+        8
+       12
+
+       ✅ 6. forEach() KHÔNG trả về giá trị (return không hoạt động)
+    📌 Ví dụ sai khi dùng return trong forEach()
+    let numbers = [1, 2, 3];
+    let result = numbers.forEach(num => {
+        return num * 2; 
+    });
+     console.log(result); // Kết quả: undefined ❌
+
+     🚀 Giải thích:
+     forEach() không trả về mảng mới.
+      Nếu muốn tạo mảng mới, hãy dùng .map() thay vì forEach().
+      📌 Cách đúng: Dùng .map() để trả về mảng mới
+      let doubled = numbers.map(num => num * 2);
+      sole.log(doubled); // Kết quả: [2, 4, 6] 
+
+    
+      CHỈ DÙNG FOR..EACH CHO VIỆC LOG RA GIÁ TRỊ VÀ VỊ TRÍ
+      KHÔNG TRẢ VỀ MẢNG MỚI NÊN KHI LOG RA KẾT QUẢ UNDEFINED
