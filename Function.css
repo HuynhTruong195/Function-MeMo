@@ -260,3 +260,40 @@ forEach() lấy từng phần tử (num) trong mảng numbers và in ra.
     
       CHỈ DÙNG FOR..EACH CHO VIỆC LOG RA GIÁ TRỊ VÀ VỊ TRÍ
       KHÔNG TRẢ VỀ MẢNG MỚI NÊN KHI LOG RA KẾT QUẢ UNDEFINED
+
+
+
+  ✅7. .MAP 
+          .map() là một phương thức của mảng trong JavaScript, giúp duyệt qua từng phần tử của mảng và trả về một mảng mới sau khi thực hiện một hàm nào đó trên từng phần tử. qua PHƯƠNG THỨC RETURN
+          Không hoạt động trên mảng rỗng:
+         Nếu mảng rỗng, map sẽ trả về một mảng rỗng mới.
+
+         let numbers = [1, 2, 3, 4, 5, 6];
+       let arr =  numbers.map(function(element, index){
+          return element +10;
+         })
+         console.log(arr);   // [11, 12 , 13, 14, 15, 16]
+         let arr = NUMBER.MAP(EL => EL+10){
+         console.log(arr);   // [11, 12 , 13, 14, 15, 16]
+
+         }
+
+
+    FOR..EACH THÌ DUYỆT QUA MẢNG VÀ THỰC THI HÀM CALLBACK NHƯNG KHÔNG TRẢ VỀ GIÁ TRỊ
+    .MAP THÌ VỪA THỰC THI VỪA TRẢ VỀ GIÁ TRỊ
+
+        forEach: Duyệt qua từng phần tử của mảng và thực thi hàm callback, nhưng không trả về giá trị (kết quả là undefined).
+        map: Cũng duyệt qua từng phần tử của mảng, nhưng có trả về một mảng mới chứa kết quả của hàm callback.
+
+  ✅8. .FILLTER
+  filter thì duyệt qua từng phần tử của mảng và trả về một mảng mới chứa các phần tử thỏa mãn điều kiện do hàm callback xác định.
+  ĐIỀU KIỆN ĐỂ LỌC LÀ GÌ THÌ ĐẶT SAU RETURN
+
+  💡 Ví dụ filter:
+  let numbers = [1, 2, 3, 4, 5, 6];
+  let result = numbers.filter(function(element, index){
+    return element % 2 ===0;
+  })
+console.log(result); // [2, 4, 6]
+
+
