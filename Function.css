@@ -297,3 +297,31 @@ forEach() lấy từng phần tử (num) trong mảng numbers và in ra.
 console.log(result); // [2, 4, 6]
 
 
+
+
+           
+📍 2. Đệ quy (recursion) là gì?
+👉 Đệ quy là một hàm tự gọi lại chính nó, để lặp lại một công việc cho đến khi đạt điều kiện dừng.
+
+    🔧 Ví dụ đơn giản:
+    javascript
+
+    function countDown(number) {
+        if (number === 0) {
+            console.log("Hết giờ!");
+            return;
+        }
+        console.log(number);
+        countDown(number - 1); // Gọi lại chính nó
+    }
+
+    countDown(3);
+    // 👉 In ra:
+    // 3
+    // 2
+    // 1
+    // Hết giờ!
+    💡 Hiểu nôm na:
+    Hàm tự gọi lại chính nó để làm việc lặp đi lặp lại.
+
+    Cần có điều kiện dừng để tránh gọi mãi không dừng (gây lỗi).
